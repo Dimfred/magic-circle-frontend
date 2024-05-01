@@ -85,6 +85,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <Flex>
         <Textarea
+          w="100%"
           autosize
           placeholder="your decklist..."
           onChange={(event) => setDecklist(event.currentTarget.value)}
