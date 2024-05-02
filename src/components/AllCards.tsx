@@ -29,6 +29,8 @@ const AllCards = () => {
     usernames: [],
     decklist: "",
     decklist_format: "plain",
+    ignore_owned_cards: false,
+    exact_match: false,
   });
 
   const loadMoreCards = async () => {
@@ -51,6 +53,8 @@ const AllCards = () => {
           usernames: filterValues.usernames,
           decklist: filterValues.decklist,
           decklist_format: CardsGetInDecklistFormatEnum.Plain,
+          ignore_owned_cards: filterValues.ignore_owned_cards,
+          exact_match: filterValues.exact_match,
           page: page,
           max_page: 50,
         },
@@ -95,7 +99,16 @@ const AllCards = () => {
   return (
     <Grid>
       <Grid.Col span={3}>
-        <FileUpload />
+        <FileUpload
+          reloadCards={async () => {
+            setTimeout(() => {
+              setPage(0);
+              setHasMore(true);
+              setCards([]);
+              setFilterValues(filterValues);
+            }, 2000);
+          }}
+        />
         <Filter setFilterValues={onFilterValuesChanged}></Filter>
       </Grid.Col>
       <Grid.Col span={9}>
@@ -103,7 +116,7 @@ const AllCards = () => {
           dataLength={cards.length}
           next={loadMoreCards}
           hasMore={hasMore}
-          loader={<p>Loading...</p>}
+          loader=""
           endMessage=""
         >
           <Flex

@@ -6,7 +6,11 @@ import { IconPhoto, IconUpload, IconX } from "@tabler/icons-react";
 import { UploadCardsFormatEnum, backend } from "../backendClient";
 import { getSession } from "../hooks/useSession";
 
-const FileUpload = () => {
+interface FileUploadProps {
+  reloadCards: () => Promise<void>;
+}
+
+const FileUpload = ({ reloadCards }: FileUploadProps) => {
   const sizeRem = 52;
   const session = getSession();
 
@@ -14,6 +18,7 @@ const FileUpload = () => {
     for (const file of files) {
       await backend.uploadCards(UploadCardsFormatEnum.Manabox, file, session!);
     }
+    await reloadCards();
   };
 
   return (
