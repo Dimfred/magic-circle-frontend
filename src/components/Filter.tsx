@@ -38,8 +38,8 @@ const Filter = ({ setFilterValues }: FilterProps) => {
 
   const [allUsernames, setAllUsernames] = useState<string[]>([]);
   const [selectedUsernames, setSelectedUsernames] = useState<string[]>([]);
-  const [ignoreOwnedCards, setIgnoreOwnedCards] = useState<boolean>(false);
-  const [exactMatch, setExactMatch] = useState<boolean>(false);
+  const [ignoreOwnedCards, setIgnoreOwnedCards] = useState<boolean>(true);
+  const [exactMatch, setExactMatch] = useState<boolean>(true);
   const [decklist, setDecklist] = useState<string>("");
 
   const loadUsers = async () => {
@@ -100,7 +100,10 @@ const Filter = ({ setFilterValues }: FilterProps) => {
         <Text fw={700}>Options:</Text>
       </Flex>
       <Flex justify="left">
-        <Checkbox.Group defaultValue={[]} withAsterisk>
+        <Checkbox.Group
+          defaultValue={["exactMatch", "ignoreOwnedCards"]}
+          withAsterisk
+        >
           <Group mt="xs">
             <Checkbox
               value="ignoreOwnedCards"
@@ -111,7 +114,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
             />
             <Checkbox
               value="exactMatch"
-              label="Match name exact"
+              label="Exact name"
               onChange={(event) => setExactMatch(event.currentTarget.checked)}
             />
           </Group>
