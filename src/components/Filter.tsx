@@ -81,7 +81,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <br />
       <Flex justify="left">
-        <Text>Decklist:</Text>
+        <Text>Decklist or URL:</Text>
       </Flex>
       <Flex>
         <Textarea
