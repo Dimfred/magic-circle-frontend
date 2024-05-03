@@ -82,7 +82,11 @@ const Filter = ({ setFilterValues }: FilterProps) => {
         <Text fw={700}>Users:</Text>
       </Flex>
       <Flex mt="xs" gap="2pt" wrap="wrap" justify="left">
-        <Chip.Group multiple onChange={setSelectedUsernames}>
+        <Chip.Group
+          multiple
+          onChange={setSelectedUsernames}
+          value={selectedUsernames}
+        >
           {allUsernames.map((username) => (
             <Chip
               value={username}
