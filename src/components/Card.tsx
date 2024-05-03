@@ -19,7 +19,13 @@ const Card = ({ card }: CardProps) => {
 
   return (
     <div>
-      <MCard shadow="sm" h="18rem" w="13rem" onClick={openScryfall}>
+      <MCard
+        shadow="sm"
+        h="18rem"
+        w="13rem"
+        onClick={openScryfall}
+        style={{ cursor: "pointer" }}
+      >
         <MCard.Section>
           <Image
             src={
