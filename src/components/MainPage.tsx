@@ -1,4 +1,4 @@
-import { Container, Title } from "@mantine/core";
+import { Container, Space, Title } from "@mantine/core";
 
 import AllCards from "./AllCards";
 
@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <Container fluid>
       <Title>Magic Circle</Title>
-      <br />
+      <Space m="xl" />
       <AllCards />
     </Container>
   );
