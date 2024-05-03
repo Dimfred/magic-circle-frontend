@@ -69,8 +69,8 @@ const FileUpload = ({ reloadCards }: FileUploadProps) => {
           </Dropzone.Idle>
 
           <div>
-            <Text size="xl" inline>
-              Upload Cards.csv
+            <Text size="xs" inline>
+              drag your Cards.csv here
             </Text>
           </div>
         </Dropzone>
