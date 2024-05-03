@@ -7,6 +7,7 @@ import {
   Space,
   Text,
   Textarea,
+  Tooltip,
 } from "@mantine/core";
 import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
@@ -79,7 +80,13 @@ const Filter = ({ setFilterValues }: FilterProps) => {
   return (
     <Fieldset legend="Filter">
       <Flex justify="left">
-        <Text fw={700}>Users:</Text>
+        <Tooltip
+          label="Allows to select the users from whom you want to see cards."
+          multiline
+          w="25%"
+        >
+          <Text fw={700}>Users:</Text>
+        </Tooltip>
       </Flex>
       <Flex mt="xs" gap="2pt" wrap="wrap" justify="left">
         <Chip.Group
@@ -101,13 +108,18 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       <Space m="xl" />
 
       <Flex justify="left">
-        <Text fw={700}>Options:</Text>
+        <Tooltip
+          label="Ignore cards I own: will ignore the cards you own, meaning it won't show a card you search for
+          from other people. Exact name: if enabled will match the name exact, else a partial match is applied,
+            having Exact Match disabled and Ignore cards I own enabled can lead to errors."
+          multiline
+          w="25%"
+        >
+          <Text fw={700}>Options:</Text>
+        </Tooltip>
       </Flex>
       <Flex justify="left">
-        <Checkbox.Group
-          defaultValue={["exactMatch", "ignoreOwnedCards"]}
-          withAsterisk
-        >
+        <Checkbox.Group defaultValue={["exactMatch", "ignoreOwnedCards"]}>
           <Group mt="xs">
             <Checkbox
               value="ignoreOwnedCards"
@@ -127,7 +139,15 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       <Space m="xl" />
 
       <Flex justify="left">
-        <Text fw={700}>Decklist or URL to decklist:</Text>
+        <Tooltip
+          label="This allows you to parse a decklist, either from text, or you can also put in an URL to a decklist,
+          supported websites are: aetherhub.com, archidekt.com, deckstats.net, moxfield.com, mtggoldfish.com, scryfall.com,
+        tappedout.net, tcgplayer.com."
+          multiline
+          w="25%"
+        >
+          <Text fw={700}>Decklist or URL to decklist:</Text>
+        </Tooltip>
       </Flex>
       <Flex>
         <Textarea
