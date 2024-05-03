@@ -9,6 +9,7 @@ import {
   Textarea,
   Tooltip,
 } from "@mantine/core";
+import { IconHelp } from "@tabler/icons-react";
 import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -79,15 +80,17 @@ const Filter = ({ setFilterValues }: FilterProps) => {
 
   return (
     <Fieldset legend="Filter">
-      <Flex justify="left" style={{ cursor: "help" }}>
+      <Flex justify="left">
         <Tooltip
           label="Allows to select the users from whom you want to see cards."
           multiline
           w="25%"
           openDelay={500}
         >
-          <Text fw={700}>Users:</Text>
+          <IconHelp size="16pt" style={{ cursor: "help" }} />
         </Tooltip>
+        <Space m="2pt" />
+        <Text fw={700}>Users:</Text>
       </Flex>
       <Flex mt="xs" gap="2pt" wrap="wrap" justify="left">
         <Chip.Group
@@ -108,7 +111,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <Space m="xl" />
 
-      <Flex justify="left" style={{ cursor: "help" }}>
+      <Flex justify="left">
         <Tooltip
           label="Ignore cards I own: will ignore the cards you own, meaning it won't show a card you search for
           from other people. Exact name: if enabled will match the name exact, else a partial match is applied,
@@ -117,8 +120,10 @@ const Filter = ({ setFilterValues }: FilterProps) => {
           w="25%"
           openDelay={500}
         >
-          <Text fw={700}>Options:</Text>
+          <IconHelp size="16pt" style={{ cursor: "help" }} />
         </Tooltip>
+        <Space m="2pt" />
+        <Text fw={700}>Options:</Text>
       </Flex>
       <Flex justify="left">
         <Checkbox.Group defaultValue={["exactMatch", "ignoreOwnedCards"]}>
@@ -140,7 +145,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <Space m="xl" />
 
-      <Flex justify="left" style={{ cursor: "help" }}>
+      <Flex justify="left">
         <Tooltip
           label="This allows you to parse a decklist, either from text, or you can also put in an URL to a decklist,
           supported websites are: aetherhub.com, archidekt.com, deckstats.net, moxfield.com, mtggoldfish.com, scryfall.com,
@@ -149,8 +154,11 @@ const Filter = ({ setFilterValues }: FilterProps) => {
           w="25%"
           openDelay={500}
         >
-          <Text fw={700}>Decklist or URL to decklist:</Text>
+          <IconHelp size="16pt" style={{ cursor: "help" }} />
         </Tooltip>
+
+        <Space m="2pt" />
+        <Text fw={700}>Decklist or URL to decklist:</Text>
       </Flex>
       <Flex>
         <Textarea
