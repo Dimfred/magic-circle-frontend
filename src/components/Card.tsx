@@ -1,5 +1,5 @@
 import { Image } from "@mantine/core";
-import { Flex, Card as MCard, Text } from "@mantine/core";
+import { Flex, Card as MCard, Text, Tooltip } from "@mantine/core";
 import { IconStar } from "@tabler/icons-react";
 
 import { CardOut } from "../backendClient";
@@ -26,38 +26,42 @@ const Card = ({ card }: CardProps) => {
               import.meta.env.VITE_BACKEND_URL + "/cards/" + card.scryfall_id
             }
           />
-          <div
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              left: "10px",
-              backgroundColor: "white",
-              borderRadius: "50%",
-              width: "30px",
-              height: "30px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "black",
-              fontSize: "0.75rem",
-              fontWeight: "bold",
-            }}
-          >
-            {card.quantity}
-          </div>
-          {card.foil && (
-            <IconStar
+          <Tooltip label="quantity" withArrow openDelay={500}>
+            <div
               style={{
                 position: "absolute",
                 bottom: "10px",
-                right: "10px",
+                left: "10px",
                 backgroundColor: "white",
                 borderRadius: "50%",
-                color: "gold",
                 width: "30px",
                 height: "30px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "black",
+                fontSize: "0.75rem",
+                fontWeight: "bold",
               }}
-            />
+            >
+              {card.quantity}
+            </div>
+          </Tooltip>
+          {card.foil && (
+            <Tooltip label="foil" withArrow openDelay={500}>
+              <IconStar
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
+                  right: "10px",
+                  backgroundColor: "white",
+                  borderRadius: "50%",
+                  color: "gold",
+                  width: "30px",
+                  height: "30px",
+                }}
+              />
+            </Tooltip>
           )}
         </MCard.Section>
       </MCard>
