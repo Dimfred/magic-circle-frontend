@@ -1,5 +1,6 @@
 import { Image } from "@mantine/core";
-import { Card as MCard, Text } from "@mantine/core";
+import { Flex, Card as MCard, Text } from "@mantine/core";
+import { IconStar } from "@tabler/icons-react";
 
 import { CardOut } from "../backendClient";
 
@@ -17,12 +18,46 @@ const Card = ({ card }: CardProps) => {
               import.meta.env.VITE_BACKEND_URL + "/cards/" + card.scryfall_id
             }
           />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "10px",
+              left: "10px",
+              backgroundColor: "white",
+              borderRadius: "50%",
+              width: "30px",
+              height: "30px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "black",
+              fontSize: "0.75rem",
+              fontWeight: "bold",
+            }}
+          >
+            {card.quantity}
+          </div>
+          {card.foil && (
+            <IconStar
+              style={{
+                position: "absolute",
+                bottom: "10px",
+                right: "10px",
+                backgroundColor: "white",
+                borderRadius: "50%",
+                color: "gold",
+                width: "30px",
+                height: "30px",
+              }}
+            />
+          )}
         </MCard.Section>
       </MCard>
-      <Text size="xs">
-        Owner: {card.owner.username} | Quantity: {card.quantity} | Foil:{" "}
-        {card.foil.toString()}
-      </Text>
+      <Flex justify="center">
+        <Text fw={700} size="xs">
+          {card.owner.username}
+        </Text>
+      </Flex>
     </div>
   );
 };
