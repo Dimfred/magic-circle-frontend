@@ -9,9 +9,17 @@ interface CardProps {
 }
 
 const Card = ({ card }: CardProps) => {
+  const openScryfall = async () => {
+    window.open(
+      `https://scryfall.com/card/${card.scryfall_id}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
   return (
     <div>
-      <MCard shadow="sm" h="18rem" w="13rem">
+      <MCard shadow="sm" h="18rem" w="13rem" onClick={openScryfall}>
         <MCard.Section>
           <Image
             src={
