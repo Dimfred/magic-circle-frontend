@@ -84,6 +84,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
           label="Allows to select the users from whom you want to see cards."
           multiline
           w="25%"
+          openDelay={500}
         >
           <Text fw={700}>Users:</Text>
         </Tooltip>
@@ -114,6 +115,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
             having Exact Match disabled and Ignore cards I own enabled can lead to errors."
           multiline
           w="25%"
+          openDelay={500}
         >
           <Text fw={700}>Options:</Text>
         </Tooltip>
@@ -145,6 +147,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
         tappedout.net, tcgplayer.com."
           multiline
           w="25%"
+          openDelay={500}
         >
           <Text fw={700}>Decklist or URL to decklist:</Text>
         </Tooltip>

@@ -28,6 +28,7 @@ const FileUpload = ({ reloadCards }: FileUploadProps) => {
         hold the collection, tap on export. Then upload the exported Cards.csv here."
         w="25%"
         multiline
+        openDelay={500}
       >
         <Dropzone
           onDrop={(files: File[]) => uploadCards(files)}
