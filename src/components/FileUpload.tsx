@@ -64,6 +64,7 @@ const FileUpload = ({ reloadCards }: FileUploadProps) => {
                 width: rem(sizeRem),
                 height: rem(sizeRem),
                 color: "var(--mantine-color-dimmed)",
+                cursor: "help",
               }}
               stroke={1.5}
             />

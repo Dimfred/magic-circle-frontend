@@ -99,16 +99,16 @@ const AllCards = () => {
   return (
     <Grid>
       <Grid.Col span={3}>
-        <FileUpload
-          reloadCards={async () => {
-            setTimeout(() => {
-              setPage(0);
-              setHasMore(true);
-              setCards([]);
-              setFilterValues(filterValues);
-            }, 2000);
-          }}
-        />
+          <FileUpload
+            reloadCards={async () => {
+              setTimeout(() => {
+                setPage(0);
+                setHasMore(true);
+                setCards([]);
+                setFilterValues(filterValues);
+              }, 2000);
+            }}
+          />
         <Filter setFilterValues={onFilterValuesChanged}></Filter>
       </Grid.Col>
       <Grid.Col span={9}>

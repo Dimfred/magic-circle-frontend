@@ -79,7 +79,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
 
   return (
     <Fieldset legend="Filter">
-      <Flex justify="left">
+      <Flex justify="left" style={{ cursor: "help" }}>
         <Tooltip
           label="Allows to select the users from whom you want to see cards."
           multiline
@@ -108,7 +108,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <Space m="xl" />
 
-      <Flex justify="left">
+      <Flex justify="left" style={{ cursor: "help" }}>
         <Tooltip
           label="Ignore cards I own: will ignore the cards you own, meaning it won't show a card you search for
           from other people. Exact name: if enabled will match the name exact, else a partial match is applied,
@@ -140,7 +140,7 @@ const Filter = ({ setFilterValues }: FilterProps) => {
       </Flex>
       <Space m="xl" />
 
-      <Flex justify="left">
+      <Flex justify="left" style={{ cursor: "help" }}>
         <Tooltip
           label="This allows you to parse a decklist, either from text, or you can also put in an URL to a decklist,
           supported websites are: aetherhub.com, archidekt.com, deckstats.net, moxfield.com, mtggoldfish.com, scryfall.com,
